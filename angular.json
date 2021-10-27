@@ -31,7 +31,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/paper-dashboard.css"
             ],
             "scripts": []
           },
@@ -102,6 +104,16 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "smart-health-card:build:production",
+            "firebaseProject": "smart-health-card-8d366",
+            "firebaseHostingSite": "smart-health-card-8d366"
           }
         }
       }

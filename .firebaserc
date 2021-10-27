@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "smart-health-card-8d366": {
+      "hosting": {
+        "smart-health-card": [
+          "smart-health-card-8d366"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "smart-health-card-8d366"
+  }
+}
