@@ -27,7 +27,7 @@
                 <tr *ngFor="let item of doctorsDocs | async">
                     
                   <td  *ngIf="item.role == 'patient'">{{ item.uid }}</td>
-                  <td  *ngIf="item.role == 'patient'">Dr. {{ item.fName }} {{ item.lName }}</td>
+                  <td  *ngIf="item.role == 'patient'">{{ item.fName }} {{ item.lName }}</td>
                   <td  *ngIf="item.role == 'patient'">{{ item.email }}</td>
                   <td  *ngIf="item.role == 'patient'">{{ item.speciality }}</td>
                   <td  *ngIf="item.role == 'patient'">
