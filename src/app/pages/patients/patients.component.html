@@ -1,0 +1,49 @@
+<div class="main-panel">
+
+    <!-- Navbar -->
+      <app-navbar title="Patients"></app-navbar>
+    <!-- End Navbar -->
+    <div class="content">
+
+        <button routerLink="/dashboard/add-patient" class="btn btn-info btn-fill btn-wd">Add New Patient</button>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card pl-5 pr-5">
+            <div class="header">
+              <h4 class="title">Patients List</h4>
+              <p class="category">List of all patients.</p>
+            </div>
+            <div class="content table-responsive table-full-width">
+              <table class="table table-striped">
+                <thead>
+                <tr><th>UID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Speciality</th>
+                <th>Action</th>
+                </tr></thead>
+                <tbody>
+                <tr *ngFor="let item of doctorsDocs | async">
+                    
+                  <td  *ngIf="item.role == 'patient'">{{ item.uid }}</td>
+                  <td  *ngIf="item.role == 'patient'">Dr. {{ item.fName }} {{ item.lName }}</td>
+                  <td  *ngIf="item.role == 'patient'">{{ item.email }}</td>
+                  <td  *ngIf="item.role == 'patient'">{{ item.speciality }}</td>
+                  <td  *ngIf="item.role == 'patient'">
+                    <button (click)="getUserReports(item.uid)" class="btn btn-sm btn-warning btn-icon"><i class="fa fa-file"></i></button>
+                    <button (click)="editUser(item.uid)" class="btn btn-sm btn-primary btn-icon ml-2"><i class="fa fa-edit"></i></button>
+                    <button (click)="deleteUser(item.uid)" class="btn btn-sm btn-danger btn-icon ml-2"><i class="fa fa-trash"></i></button>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <app-footer></app-footer>
+  </div>

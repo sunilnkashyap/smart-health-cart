@@ -1,0 +1,59 @@
+<div class="main-panel">
+
+    <!-- Navbar -->
+      <app-navbar title="Patient History"></app-navbar>
+
+<div class="content">
+    <div class="row">
+
+
+      <div class="col-md-12">
+        <div class="card card-user">
+          <div class="card-header">
+            <h5 class="card-title">Patient Reports</h5>
+          </div>
+          <div class="card-body">
+            <label>
+                <input
+                  type="file"
+                  class="text-nowrap text-truncate"
+                  (change)="selectFile($event)"
+                />
+              </label>
+              
+              <button
+                class="btn btn-success btn-sm"
+                [disabled]="!selectedFiles"
+                (click)="upload()"
+              >
+                Upload
+              </button>
+              
+              <div *ngIf="currentFileUpload" class="progress mt-2">
+                <div
+                  class="progress-bar progress-bar-info"
+                  role="progressbar"
+                  attr.aria-valuenow="{{ percentage }}"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  [ngStyle]="{ width: percentage + '%' }"
+                >
+                  {{ percentage }}%
+                </div>
+              </div>
+
+
+              <div class="row mt-5">
+                <div class="col-md-3" *ngFor="let file of patientsFiles; let i=index">
+                    <img [src]="file.url"  (click)="open(i)" />
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  </div>
